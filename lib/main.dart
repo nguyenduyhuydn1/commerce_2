@@ -13,9 +13,11 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
 
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: IntroScreen(),
+      theme: ThemeData(useMaterial3: true),
+      home: const IntroScreen(),
+      // home: const HomeScreen(),
     );
   }
 }
