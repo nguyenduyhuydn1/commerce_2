@@ -29,17 +29,15 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         child: Stack(
           children: [
-            Expanded(
-              child: PageView.builder(
-                controller: _pageController,
-                onPageChanged: (value) {
-                  setState(() {
-                    currentIndex = value;
-                  });
-                },
-                itemCount: _pages.length,
-                itemBuilder: (context, index) => _pages[index],
-              ),
+            PageView.builder(
+              controller: _pageController,
+              onPageChanged: (value) {
+                setState(() {
+                  currentIndex = value;
+                });
+              },
+              itemCount: _pages.length,
+              itemBuilder: (context, index) => _pages[index],
             ),
             Positioned(
               bottom: 20,

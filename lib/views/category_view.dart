@@ -7,32 +7,30 @@ class CategoryView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Column(
-        children: [
-          Expanded(
-            child: ListView.builder(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              itemBuilder: (context, index) {
-                final category = categories[index % categories.length];
-                return Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Container(
-                    width: SizeConfig.screenWidth * 0.8,
-                    height: 170,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: NetworkImage(category.thumbnailImage),
-                        fit: BoxFit.cover,
-                      ),
+    return Column(
+      children: [
+        Expanded(
+          child: ListView.builder(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            itemBuilder: (context, index) {
+              final category = categories[index % categories.length];
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: Container(
+                  width: SizeConfig.screenWidth * 0.8,
+                  height: 170,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage(category.thumbnailImage),
+                      fit: BoxFit.cover,
                     ),
                   ),
-                );
-              },
-            ),
-          )
-        ],
-      ),
+                ),
+              );
+            },
+          ),
+        )
+      ],
     );
   }
 }
